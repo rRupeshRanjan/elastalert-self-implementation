@@ -1,0 +1,17 @@
+alertName: "ES health checkup"
+esHost: ""
+index: "heartbeat-*"
+
+timestamp: "2m"
+threshold: 1
+realert: "10s"
+
+aggregate: true
+aggregateAttributes: ip
+
+query: "up: true AND 9200"
+message: "ES up at ip: {0} on port: {1}"
+alertAttributes:
+  - ip
+  - port
+
